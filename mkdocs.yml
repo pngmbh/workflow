@@ -116,8 +116,8 @@ nav:
     - v2.1.0: changelogs/v2.1.0.md
     - v2.0.0: changelogs/v2.0.0.md
 theme:
-  name: mkdocs
-  custom_dir: themes/deis
+  name: null
+  custom_dir: 'themes/deis'
 docs_dir: src
 markdown_extensions:
   - markdown_checklist.extension
