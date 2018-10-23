@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  workflow:
+  - created: 2018-10-23T15:53:27.810337+02:00
+    description: Hephy Workflow
+    digest: 29c71856e34d3f9050ca3feb0bcbe8a0877f1f67d973b4616e6d0d428c13a51f
+    home: https://github.com/teamhephy/workflow
+    maintainers:
+    - email: team@teamhephy.com
+    name: workflow
+    urls:
+    - workflow-v2.19.4.tgz
+    version: v2.19.4
+generated: 2018-10-23T15:53:27.807821+02:00

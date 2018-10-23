@@ -1,5 +1,6 @@
 # Makefile for MkDocs documentation
 #
+SHELL = /bin/bash
 
 # You can set these variables from the command line.
 BUILDDIR        ?= _build/html
@@ -53,3 +54,14 @@ docker-serve:
 	${DEV_ENV_CMD} ${IMAGE} $(MKDOCSSERVE)
 
 run: docker-build docker-serve
+
+build-gh-pages-chart:
+	helm fetch --untar hephy/workflow
+	cp charts/workflow/templates/* workflow/templates/
+	cp charts/workflow/values.yaml workflow
+	helm package workflow
+	helm repo index workflow
+	rm -rf workflow/
+	git add -u
+	@echo commit this to the gh-pages branch
+	git status
