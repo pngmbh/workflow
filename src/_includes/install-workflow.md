@@ -63,5 +63,3 @@ deis-workflow-manager-68nu6   1/1       Running   0          5m
 ```
 
 Once all of the pods are in the `READY` state, Deis Workflow is up and running!
-
-Next, [configure dns](dns.md) so you can register your first user and deploy an application.
