@@ -58,9 +58,13 @@ run: docker-build docker-serve
 build-gh-pages-chart:
 	helm fetch --untar hephy/workflow
 	cp charts/workflow/templates/* workflow/templates/
+	cp charts/workflow/requirements.yaml workflow
 	cp charts/workflow/values.yaml workflow
+	# actually should be "helm dependencies update" but currently
+	# the new subcharts aren't released on the chart repo yet
+	rm -rf workflow/charts/workflow-manager
 	helm package workflow
-	helm repo index workflow
+	helm repo index .
 	rm -rf workflow/
 	git add -u
 	@echo commit this to the gh-pages branch
